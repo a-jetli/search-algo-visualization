@@ -18,7 +18,7 @@ ROWS = 101
 START = (0, 0)
 GOAL = (ROWS - 1, ROWS - 1)
 
-# ─── Maze Generator (from create_grid_worlds.py) ──────────────────────────────
+# ─── Maze Generator ──────────────────────────────
 
 
 def create_maze(rows: int = ROWS) -> List[List[int]]:
@@ -98,7 +98,7 @@ class CustomPQ_minG:
         return len(self._h) == 0
 
 
-# ─── Forward A* (from q2.py) ──────────────────────────────────────────────────
+# ─── Forward A* ──────────────────────────────────────────────────
 
 
 def fwd_astar_gen(
@@ -222,7 +222,7 @@ def fwd_astar_gen(
                 return
 
 
-# ─── Backward A* (from q3.py) ─────────────────────────────────────────────────
+# ─── Backward A* ─────────────────────────────────────────────────
 
 
 def bwd_astar_gen(
@@ -346,7 +346,7 @@ def bwd_astar_gen(
                 return
 
 
-# ─── Adaptive A* (from q5.py) ─────────────────────────────────────────────────
+# ─── Adaptive A* ─────────────────────────────────────────────────
 
 
 def adaptive_astar_gen(
