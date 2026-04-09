@@ -558,22 +558,45 @@ def draw_grid(surf, maze, state: Optional[dict], ox=0, oy=0):
 # ─── draw_text() —───────────────────────────────────────────────────────
 
 
-def file_dialog_open():
-    root = tk.Tk()
-    root.withdraw()
-    path = filedialog.askopenfilename(filetypes=[("JSON", "*.json")])
-    root.destroy()
-    return path or None
+import subprocess
 
+def file_dialog_open():
+    script = '''
+    tell application "System Events"
+        activate
+    end tell
+    tell application "Finder"
+        set f to choose file with prompt "Select a maze JSON file" of type {"json"}
+        return POSIX path of f
+    end tell
+    '''
+    try:
+        result = subprocess.run(["osascript", "-e", script],
+                                capture_output=True, text=True)
+        path = result.stdout.strip()
+        return path if path else None
+    except Exception:
+        return None
 
 def file_dialog_save():
-    root = tk.Tk()
-    root.withdraw()
-    path = filedialog.asksaveasfilename(
-        defaultextension=".json", filetypes=[("JSON", "*.json")]
-    )
-    root.destroy()
-    return path or None
+    script = '''
+    tell application "System Events"
+        activate
+    end tell
+    tell application "Finder"
+        set f to choose file name with prompt "Save maze as JSON" default name "maze.json"
+        return POSIX path of f
+    end tell
+    '''
+    try:
+        result = subprocess.run(["osascript", "-e", script],
+                                capture_output=True, text=True)
+        path = result.stdout.strip()
+        if path and not path.endswith(".json"):
+            path += ".json"
+        return path if path else None
+    except Exception:
+        return None
 
 
 def draw_text(surf, text, x, y, color=C_TEXT, size=16, bold=False):
