@@ -10,9 +10,10 @@ An easy to follow visualization of three A* variants navigating a randomly gener
 
 ## Demo
 
+**Basic UI and Forward A***
 ![Forward and Adaptive A*](demo1.gif)
 
-
+**Backward A***
 ![Backward A*](demo2.gif)
 
 
