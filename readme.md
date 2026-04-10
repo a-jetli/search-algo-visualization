@@ -10,7 +10,12 @@ An easy to follow visualization of three A* variants navigating a randomly gener
 
 ## Demo
 
-WIP
+![Forward and Adaptive A*](demo1.gif)
+
+
+![Backward A*](demo2.gif)
+
+
 
 ## How To Run it
 
