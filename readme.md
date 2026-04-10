@@ -1,6 +1,6 @@
 # A* Pathfinding Visualizer
 
-An easy to follow visualization of three A* variants navigating a randomly generated 101x101 maze.
+An easy to follow visualization of three A* variants navigating a randomly generated 101x101 maze. Built upon work and concepts from CS440 Intro to AI, visualization done with Pygame. 
 
 ## Algorithms
 
