@@ -9,11 +9,17 @@ An easy to follow visualization of three A* variants navigating a randomly gener
 - **Adaptive A*** — like forward, but updates heuristic values after each search using previously expanded cells
 
 ## Demo
+---
 
 **Basic UI and Forward A***
+
 ![Forward and Adaptive A*](demo1.gif)
 
+---
+
 **Backward A***
+
+---
 ![Backward A*](demo2.gif)
 
 
